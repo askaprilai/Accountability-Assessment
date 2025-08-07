@@ -1009,18 +1009,7 @@
                     emailjs.send('service_vntq4ai', 'template_j1dh6rf', emailParams)
                     .then(function(response) {
                         console.log('Email sent successfully:', response);
-                        
-                        // Also save to CSV for your records
-                        return fetch('save-lead.php', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(assessmentData)
-                        });
-                    })
-                    .then(response => {
-                        if (response) return response.json();
+                        console.log('Assessment Data for your records:', assessmentData);
                         return { success: true };
                     })
                     .then(data => {
